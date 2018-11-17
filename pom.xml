@@ -25,6 +25,7 @@
         <java.version>1.8</java.version>
         <oracle.jdbc.version>11.2.0.1.0</oracle.jdbc.version>
         <spring-cloud.version>Greenwich.M1</spring-cloud.version>
+        <org.flywaydb.version>5.2.1</org.flywaydb.version>
     </properties>
 
     <modules>
@@ -82,6 +83,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!-- 数据库升级 Flyway -->
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>${org.flywaydb.version}</version>
         </dependency>
     </dependencies>
 
