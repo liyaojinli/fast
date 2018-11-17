@@ -25,4 +25,7 @@
         </dependency>
     </dependencies>
 
+    <build>
+        <finalName>com.yss.ams.fast.framework</finalName>
+    </build>
 </project>
