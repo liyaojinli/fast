@@ -1,6 +1,7 @@
 package com.yss.ams.fast.systemmanager.controller;
 
 import com.yss.ams.fast.systemmanager.entity.User;
+import com.yss.ams.fast.systemmanager.interface4Feign.RightFeignService;
 import com.yss.ams.fast.systemmanager.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,8 +20,11 @@ public class UserController {
     @Autowired
     private UserService service;
 
-    @Autowired
+    @Autowired()
     private RestTemplate template;
+
+    @Autowired
+    private RightFeignService rightService;
 
     @RequestMapping("/find/{name}")
     public String findByName(@PathVariable("name") String name, Model model) {
@@ -33,5 +37,11 @@ public class UserController {
     @ResponseBody
     public String restRight(@PathVariable("name") String name) {
         return template.getForObject("http://right/right/rest/{name}", String.class, name);
+    }
+
+    @RequestMapping("/restRightByFeign/{name}")
+    @ResponseBody
+    public String restFeign(@PathVariable("name") String name){
+        return rightService.helloRest(name);
     }
 }
