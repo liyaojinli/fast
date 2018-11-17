@@ -33,6 +33,7 @@
         <module>right</module>
         <module>eureka-server</module>
         <module>framework</module>
+        <module>zuul-server</module>
     </modules>
 
 
@@ -94,5 +95,12 @@
             </snapshots>
         </repository>
     </repositories>
-
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
