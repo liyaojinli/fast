@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
-@Controller("systemManagerUserController")
+@Controller()
 @RequestMapping("/systemmanager/user")
 public class UserController {
 
@@ -23,6 +23,7 @@ public class UserController {
     @Autowired()
     private RestTemplate template;
 
+    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private RightFeignService rightService;
 
